@@ -20,4 +20,5 @@ fun changedModules(commandExec: CommandExecutor, defaultBranch: String, adjacenc
 private fun parseModuleName(commandResult: String): String =
     commandResult.trimStart()
         .split(" ", limit = 2)[1]
-        .split("/", limit = 2)[0]
+        .split("/src", limit = 2)[0]
+            .split("/").last()
